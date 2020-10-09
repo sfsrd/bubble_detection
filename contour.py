@@ -33,7 +33,8 @@ cv2.imwrite("th2.jpg", th2)
 
 
 #contours = sorted(contours, key = cv2.contourArea, reverse = True)
-contours = lenBubbleSort(contours)
+#contours = lenBubbleSort(contours)
+contours = sorted(contours, key = lambda x: len(x), reverse = True)
 c = contours[0]
 rbox = cv2.fitEllipse(c)
 print('rbox', rbox)
